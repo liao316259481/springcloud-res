@@ -2,3 +2,15 @@ user:
   name: hsy
   age: 1111111
   address: 中国, 北京
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbgirl
+    username: root
+    password: root
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
