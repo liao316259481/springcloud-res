@@ -8,9 +8,13 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/dbgirl
     username: root
     password: root
-
-spring:
   jpa:
     hibernate:
-      ddl-auto: update
+#      ddl-auto: create  # create 创建表并删除之前存在的表
+#      ddl-auto: create-drop  # create-drop 创建表并删除之前存在的表 应用停下来会删除表
+#      ddl-auto: validate  # validate 验证数据与表结构是否一致 不一致报错
+      ddl-auto: update  # update 不会删除表 验证数据与表结构是否一致 不一致跟新新加的字段
     show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true #报错 org.hibernate.LazyInitializationException: could not initialize proxy - no Session
